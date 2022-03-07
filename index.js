@@ -45,6 +45,8 @@ const checkChanges = async () => {
 const getCurrentStatus = () => currentStatus;
 
 await client.login(process.env.BOT_TOKEN);
+console.log(`Logged in as ${client.user.tag}!`);
 await checkChanges();
 commandHandler(client, data, checkChanges, getCurrentStatus);
 setInterval(checkChanges, 600000);
+console.log('Ready!');
